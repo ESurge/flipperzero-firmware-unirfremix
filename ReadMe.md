@@ -69,6 +69,7 @@ Using the Music_Player plugin as a starting point (instead of using the Hello Wo
 
 After a few days of coding, I managed to get the app running pretty good. I proceed with a layout change which helped me learn how to create/import images (as icons). Also, I implemented a few ideas/suggestions which were brought up by various users in the Flipper Devices Discord, and this project is now released.
 
+------------
 ### Credits
 - [Jimilinuxguy](https://github.com/jimilinuxguy) for code base reference and the initial idea
 - "Red_Link2" for creating the D-Pad animation

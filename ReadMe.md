@@ -31,8 +31,8 @@
     - For example: If you set your label or file to ```WWWWWWWWWWWWWWW``` you'll be over the screen limits.
 
 * ##### Firmware
-  - Code base is based on the released version of Unleashed v0.58.1
-  - I modified the wav_player a bit but that's all.
+  - Code based on the Unleashed firmware
+  - I modified the wav_player title in applications.c but that's all.
 
 * ##### Issues
   - If you find any issues, report them. I am not sure I can fix them, but I will try.

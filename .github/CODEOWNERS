@@ -1,0 +1,63 @@
+# Who owns all the fish by default
+
+* @skotopes @DrZlo13
+
+# Applications
+applications/** @skotopes @DrZlo13
+applications/accessor/** @skotopes @DrZlo13
+applications/loader/** @skotopes @DrZlo13 @gornekich
+applications/bt/** @skotopes @DrZlo13
+applications/cli/** @skotopes @DrZlo13
+applications/dolphin/** @skotopes @DrZlo13
+applications/gpio-tester/** @skotopes @DrZlo13
+applications/gui/** @skotopes @DrZlo13
+applications/gui-test/** @skotopes @DrZlo13
+applications/ibutton/** @skotopes @DrZlo13
+applications/input/** @skotopes @DrZlo13
+applications/infrared/** @skotopes @DrZlo13
+applications/lf-rfid/** @skotopes @DrZlo13
+applications/menu/** @skotopes @DrZlo13
+applications/music-player/** @skotopes @DrZlo13
+applications/nfc/** @skotopes @DrZlo13 @gornekich
+applications/power/** @skotopes @DrZlo13
+applications/sd-card-test/** @skotopes @DrZlo13
+applications/sd-filesystem/** @skotopes @DrZlo13
+applications/subghz/** @skotopes @DrZlo13
+applications/template/** @skotopes @DrZlo13
+applications/tests/** @skotopes @DrZlo13
+applications/updater/** @skotopes @DrZlo13 @hedger
+
+# Assets and asset generator
+assets/** @skotopes @DrZlo13
+
+# Bootloader
+bootloader/** @skotopes @DrZlo13
+
+# Core, HAL and applocation loader
+core/** @skotopes @DrZlo13
+
+# Debug tools
+debug/** @skotopes @DrZlo13
+
+# Firmware
+firmware/** @skotopes @DrZlo13
+
+# Lib
+lib/app-template/** @skotopes @DrZlo13
+lib/callback-connector/** @skotopes @DrZlo13
+lib/common-api/** @skotopes @DrZlo13
+lib/cyfral/** @skotopes @DrZlo13
+lib/drivers/** @skotopes @DrZlo13 @gornekich
+lib/fatfs/** @skotopes @DrZlo13
+lib/fnv1a-hash/** @skotopes @DrZlo13
+lib/littlefs/** @skotopes @DrZlo13
+lib/mlib/** @skotopes @DrZlo13
+lib/onewire/** @skotopes @DrZlo13
+lib/qrcode/** @skotopes @DrZlo13
+lib/ST25RFAL002/** @skotopes @DrZlo13 @gornekich
+lib/STM32CubeWB/** @skotopes @DrZlo13
+lib/u8g2/** @skotopes @DrZlo13
+lib/version/** @skotopes @DrZlo13
+
+# Make
+make/** @skotopes @DrZlo13

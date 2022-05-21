@@ -1,5 +1,5 @@
 # UniRF Remix App
-### Integrated into Flipper Zero Unleashed Firmware v0.58.1
+### Integrated into Flipper Zero Unleashed Firmware
 ------------
 ### Quick Start
 

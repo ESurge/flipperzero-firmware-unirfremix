@@ -56,7 +56,7 @@
 
 ![unirfremix-invalidmap](https://user-images.githubusercontent.com/982575/169639438-f1b96944-42c4-476c-9fe2-233d174c6262.png)
 
-#### Invalid Map File:
+#### Missing Map File:
 - If you don't have the ```universal_rf_map``` file, you'll see this screen
 
 ![unirfremix-missingmap](https://user-images.githubusercontent.com/982575/169639439-6414c81a-3de9-4817-b9b5-235130fd0e56.png)

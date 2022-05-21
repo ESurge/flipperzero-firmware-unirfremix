@@ -52,7 +52,7 @@
 ![unirfremix-sending](https://user-images.githubusercontent.com/982575/169639435-74bdeb9e-da58-4ada-b613-8c4f8f89ab46.png)
 
 #### Invalid Map File:
-- If you don't have at least one valid file path set, you'll see this screen
+- If you don't have at least one valid file path set in your ```universal_rf_map``` file, you'll see this screen
 
 ![unirfremix-invalidmap](https://user-images.githubusercontent.com/982575/169639438-f1b96944-42c4-476c-9fe2-233d174c6262.png)
 

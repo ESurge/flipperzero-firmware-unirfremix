@@ -167,15 +167,19 @@ void unirfremix_cfg_set_check(UniRFRemix* app) {
     int label_len = 12;
 
     //check that map file exists
-    if(!flipper_format_file_open_existing(fff_data_file, string_get_cstr(file_name))) {
-        FURI_LOG_I(TAG, "Could not open file %s", string_get_cstr(file_name));
+    if(!flipper_format_file_open_existing(fff_data_file, string_get_cstr(file_name)))
+	{
+        FURI_LOG_I(TAG, "Could not open MAP file %s", string_get_cstr(file_name));
         app->file_result = 1;
-    } else {
-        //Filename Assignment/Check Start
+    }
+	else
+	{
+        //Filename Assignment/Check Start		
 
         //assign variables to values within map file
         //set missing filenames to N/A
-        if(!flipper_format_read_string(fff_data_file, "UP", app->up_file)) {
+        if(!flipper_format_read_string(fff_data_file, "UP", app->up_file))
+		{
             FURI_LOG_I(TAG, "Could not read UP string");
 
             //increment file_blank for processing later
@@ -188,16 +192,19 @@ void unirfremix_cfg_set_check(UniRFRemix* app) {
             app->up_enabled = 0;
 
             FURI_LOG_I(TAG, "Up_Enabled: %d", app->up_enabled);
-        } else {
-            //check name length for proper screen fit
-            //then set filename as label. Might be replaced with defined label later on below.
-            app->up_label = extract_filename(string_get_cstr(app->up_file), label_len);
-
-            FURI_LOG_I(TAG, "UP file: %s", string_get_cstr(app->up_file));
         }
+		else
+		{
+			//check name length for proper screen fit
+			//then set filename as label. Might be replaced with defined label later on below.
+			app->up_label = extract_filename(string_get_cstr(app->up_file), label_len);
+
+			FURI_LOG_I(TAG, "UP file: %s", string_get_cstr(app->up_file));
+		}	
 
         //Repeat process for Down
-        if(!flipper_format_read_string(fff_data_file, "DOWN", app->down_file)) {
+        if(!flipper_format_read_string(fff_data_file, "DOWN", app->down_file))
+		{
             FURI_LOG_I(TAG, "Could not read DOWN string");
 
             app->file_blank++;
@@ -205,20 +212,17 @@ void unirfremix_cfg_set_check(UniRFRemix* app) {
             app->down_enabled = 0;
 
             FURI_LOG_I(TAG, "Down_Enabled: %d", app->down_enabled);
-        } else {
+        }
+		else
+		{
             app->down_label = extract_filename(string_get_cstr(app->down_file), label_len);
-
-            if(app->down_label == NULL) {
-                app->file_blank++;
-                app->down_label = "N/A";
-                app->down_enabled = 0;
-            }
 
             FURI_LOG_I(TAG, "DOWN file: %s", string_get_cstr(app->down_file));
         }
 
         //Repeat process for Left
-        if(!flipper_format_read_string(fff_data_file, "LEFT", app->left_file)) {
+        if(!flipper_format_read_string(fff_data_file, "LEFT", app->left_file))
+		{
             FURI_LOG_I(TAG, "Could not read LEFT string");
 
             app->file_blank++;
@@ -226,14 +230,17 @@ void unirfremix_cfg_set_check(UniRFRemix* app) {
             app->left_enabled = 0;
 
             FURI_LOG_I(TAG, "Left_Enabled: %d", app->left_enabled);
-        } else {
+        }
+		else
+		{
             app->left_label = extract_filename(string_get_cstr(app->left_file), label_len);
 
             FURI_LOG_I(TAG, "LEFT file: %s", string_get_cstr(app->left_file));
         }
 
         //Repeat process for Right
-        if(!flipper_format_read_string(fff_data_file, "RIGHT", app->right_file)) {
+        if(!flipper_format_read_string(fff_data_file, "RIGHT", app->right_file))
+		{
             FURI_LOG_I(TAG, "Could not read RIGHT string");
 
             app->file_blank++;
@@ -241,14 +248,17 @@ void unirfremix_cfg_set_check(UniRFRemix* app) {
             app->right_enabled = 0;
 
             FURI_LOG_I(TAG, "Right_Enabled: %d", app->right_enabled);
-        } else {
+        }
+		else
+		{
             app->right_label = extract_filename(string_get_cstr(app->right_file), label_len);
 
             FURI_LOG_I(TAG, "RIGHT file: %s", string_get_cstr(app->right_file));
         }
 
         //Repeat process for Ok
-        if(!flipper_format_read_string(fff_data_file, "OK", app->ok_file)) {
+        if(!flipper_format_read_string(fff_data_file, "OK", app->ok_file))
+		{
             FURI_LOG_I(TAG, "Could not read OK string");
 
             app->file_blank++;
@@ -256,11 +266,16 @@ void unirfremix_cfg_set_check(UniRFRemix* app) {
             app->ok_enabled = 0;
 
             FURI_LOG_I(TAG, "Ok_Enabled: %d", app->ok_enabled);
-        } else {
+        }
+		else
+		{
             app->ok_label = extract_filename(string_get_cstr(app->ok_file), label_len);
 
             FURI_LOG_I(TAG, "OK file: %s", string_get_cstr(app->ok_file));
         }
+		
+		//File definitions are done.
+		//File checks will follow after label assignment in order to close the universal_rf_map file without the need to reopen it again.
 
         //Label Assignment/Check Start
 
@@ -347,17 +362,137 @@ void unirfremix_cfg_set_check(UniRFRemix* app) {
 
             FURI_LOG_I(TAG, "OK label: %s", app->ok_label);
         }
-
-        //determine whether or not to continue to launch app with missing variables
-        if(app->file_blank == 5) {
-            app->file_result = 2;
-        } else {
-            app->file_result = 0;
-        }
     }
 
+	//Close universal_rf_map
     flipper_format_free(fff_data_file);
     furi_record_close("storage");
+	
+	//File Existence Check
+	//Check each file definition if not already set to "N/A"
+	
+	//determine if files exist.
+	//determine whether or not to continue to launch app with missing variables
+	//if 5 files are missing, throw error
+
+    if(app->file_blank == 5)
+	{
+		//trigger invalid file error screen
+		app->file_result = 2;
+	}
+	else
+	{
+		//check all files
+		//reset app->file_blank to redetermine if error needs to be thrown
+		app->file_blank = 0;
+		
+		//if button is still enabled, check that file exists
+		if(app->up_enabled == 1)
+		{
+			string_set(file_name, app->up_file);
+			Storage* storage = furi_record_open("storage");
+			FlipperFormat* fff_data_file = flipper_format_file_alloc(storage);
+			
+			if(!flipper_format_file_open_existing(fff_data_file, string_get_cstr(file_name)))
+			{
+				FURI_LOG_I(TAG, "Could not open UP file %s", string_get_cstr(file_name));
+				
+				//disable button, and set label to "N/A"
+				app->up_enabled = 0;
+				app->up_label = "N/A";
+				app->file_blank++;
+			}
+			
+			//close the file
+			flipper_format_free(fff_data_file);
+			furi_record_close("storage");
+		}
+		
+		if(app->down_enabled == 1)
+		{
+			string_set(file_name, app->down_file);
+			Storage* storage = furi_record_open("storage");
+			FlipperFormat* fff_data_file = flipper_format_file_alloc(storage);
+			
+			if(!flipper_format_file_open_existing(fff_data_file, string_get_cstr(file_name)))
+			{
+				FURI_LOG_I(TAG, "Could not open DOWN file %s", string_get_cstr(file_name));
+				
+				app->down_enabled = 0;
+				app->down_label = "N/A";
+				app->file_blank++;
+			}
+			
+			flipper_format_free(fff_data_file);
+			furi_record_close("storage");
+		}
+		
+		if(app->left_enabled == 1)
+		{
+			string_set(file_name, app->left_file);
+			Storage* storage = furi_record_open("storage");
+			FlipperFormat* fff_data_file = flipper_format_file_alloc(storage);
+			
+			if(!flipper_format_file_open_existing(fff_data_file, string_get_cstr(file_name)))
+			{
+				FURI_LOG_I(TAG, "Could not open LEFT file %s", string_get_cstr(file_name));
+				
+				app->left_enabled = 0;
+				app->left_label = "N/A";
+				app->file_blank++;
+			}
+			
+			flipper_format_free(fff_data_file);
+			furi_record_close("storage");
+		}
+		
+		if(app->right_enabled == 1)
+		{
+			string_set(file_name, app->right_file);
+			Storage* storage = furi_record_open("storage");
+			FlipperFormat* fff_data_file = flipper_format_file_alloc(storage);
+			
+			if(!flipper_format_file_open_existing(fff_data_file, string_get_cstr(file_name)))
+			{
+				FURI_LOG_I(TAG, "Could not open RIGHT file %s", string_get_cstr(file_name));
+				
+				app->right_enabled = 0;
+				app->right_label = "N/A";
+				app->file_blank++;
+			}
+			
+			flipper_format_free(fff_data_file);
+			furi_record_close("storage");
+		}
+		
+		if(app->ok_enabled == 1)
+		{
+			string_set(file_name, app->ok_file);
+			Storage* storage = furi_record_open("storage");
+			FlipperFormat* fff_data_file = flipper_format_file_alloc(storage);
+			
+			if(!flipper_format_file_open_existing(fff_data_file, string_get_cstr(file_name)))
+			{
+				FURI_LOG_I(TAG, "Could not open OK file %s", string_get_cstr(file_name));
+				
+				app->ok_enabled = 0;
+				app->ok_label = "N/A";
+				app->file_blank++;
+			}
+			
+			flipper_format_free(fff_data_file);
+			furi_record_close("storage");
+		}
+		
+		if(app->file_blank == 5)
+		{
+			app->file_result = 2;
+		}
+		else
+		{
+			app->file_result = 0;
+		}
+	}
 }
 
 static void unirfremix_end_send(UniRFRemix* app) {

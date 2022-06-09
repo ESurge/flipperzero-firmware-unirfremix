@@ -74,8 +74,8 @@ const SubGhzProtocol subghz_protocol_keeloq = {
     .name = SUBGHZ_PROTOCOL_KEELOQ_NAME,
     .type = SubGhzProtocolTypeDynamic,
     .flag = SubGhzProtocolFlag_433 | SubGhzProtocolFlag_868 | SubGhzProtocolFlag_315 |
-            SubGhzProtocolFlag_AM | SubGhzProtocolFlag_Decodable | SubGhzProtocolFlag_Load | SubGhzProtocolFlag_Save |
-            SubGhzProtocolFlag_Send,
+            SubGhzProtocolFlag_AM | SubGhzProtocolFlag_Decodable | SubGhzProtocolFlag_Load |
+            SubGhzProtocolFlag_Save | SubGhzProtocolFlag_Send,
 
     .decoder = &subghz_protocol_keeloq_decoder,
     .encoder = &subghz_protocol_keeloq_encoder,
@@ -152,7 +152,7 @@ static bool subghz_protocol_keeloq_gen_data(SubGhzProtocolEncoderKeeloq* instanc
                     break;
                 case KEELOQ_LEARNING_UNKNOWN:
                     code_found_reverse = subghz_protocol_blocks_reverse_key(
-                    instance->generic.data, instance->generic.data_count_bit);
+                        instance->generic.data, instance->generic.data_count_bit);
                     hop = code_found_reverse & 0x00000000ffffffff;
                     break;
                 }

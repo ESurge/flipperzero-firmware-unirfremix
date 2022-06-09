@@ -73,8 +73,8 @@ const SubGhzProtocolEncoder subghz_protocol_star_line_encoder = {
 const SubGhzProtocol subghz_protocol_star_line = {
     .name = SUBGHZ_PROTOCOL_STAR_LINE_NAME,
     .type = SubGhzProtocolTypeDynamic,
-    .flag = SubGhzProtocolFlag_433 | SubGhzProtocolFlag_AM | SubGhzProtocolFlag_Decodable
-            | SubGhzProtocolFlag_Load | SubGhzProtocolFlag_Save | SubGhzProtocolFlag_Send,
+    .flag = SubGhzProtocolFlag_433 | SubGhzProtocolFlag_AM | SubGhzProtocolFlag_Decodable |
+            SubGhzProtocolFlag_Load | SubGhzProtocolFlag_Save | SubGhzProtocolFlag_Send,
 
     .decoder = &subghz_protocol_star_line_decoder,
     .encoder = &subghz_protocol_star_line_encoder,
@@ -117,13 +117,11 @@ void subghz_protocol_encoder_star_line_free(void* context) {
  * @param instance Pointer to a SubGhzProtocolEncoderKeeloq* instance
  * @param btn Button number, 4 bit
  */
-static bool subghz_protocol_star_line_gen_data(SubGhzProtocolEncoderStarLine* instance, uint8_t btn) {
+static bool
+    subghz_protocol_star_line_gen_data(SubGhzProtocolEncoderStarLine* instance, uint8_t btn) {
     instance->generic.cnt++;
     uint32_t fix = btn << 24 | instance->generic.serial;
-    uint32_t decrypt = btn << 24 |
-                       (instance->generic.serial & 0xFF)
-                           << 16 | 
-                       instance->generic.cnt;
+    uint32_t decrypt = btn << 24 | (instance->generic.serial & 0xFF) << 16 | instance->generic.cnt;
     uint32_t hop = 0;
     uint64_t man = 0;
     uint64_t code_found_reverse;
@@ -151,7 +149,7 @@ static bool subghz_protocol_star_line_gen_data(SubGhzProtocolEncoderStarLine* in
                     break;
                 case KEELOQ_LEARNING_UNKNOWN:
                     code_found_reverse = subghz_protocol_blocks_reverse_key(
-                    instance->generic.data, instance->generic.data_count_bit);
+                        instance->generic.data, instance->generic.data_count_bit);
                     hop = code_found_reverse & 0x00000000ffffffff;
                     break;
                 }
@@ -197,8 +195,9 @@ bool subghz_protocol_star_line_create_data(
  * @param instance Pointer to a SubGhzProtocolEncoderKeeloq instance
  * @return true On success
  */
-static bool
-    subghz_protocol_encoder_star_line_get_upload(SubGhzProtocolEncoderStarLine* instance, uint8_t btn) {
+static bool subghz_protocol_encoder_star_line_get_upload(
+    SubGhzProtocolEncoderStarLine* instance,
+    uint8_t btn) {
     furi_assert(instance);
 
     //gen new key

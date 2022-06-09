@@ -575,18 +575,18 @@ bool furi_hal_subghz_is_tx_allowed(uint32_t value) {
     switch(furi_hal_version_get_hw_region()) {
     case FuriHalVersionRegionEuRu:
         //433,05..434,79; 868,15..868,55
-    if(!(value >= 299999755 && value <= 348000335) &&
-       !(value >= 386999938 && value <= 464000000) &&
-       !(value >= 778999847 && value <= 928000000)) {
+        if(!(value >= 299999755 && value <= 348000335) &&
+           !(value >= 386999938 && value <= 464000000) &&
+           !(value >= 778999847 && value <= 928000000)) {
         } else {
             is_allowed = true;
         }
         break;
     case FuriHalVersionRegionUsCaAu:
         //304,10..321,95; 433,05..434,79; 915,00..928,00
-    if(!(value >= 299999755 && value <= 348000335) &&
-       !(value >= 386999938 && value <= 464000000) &&
-       !(value >= 778999847 && value <= 928000000)) {
+        if(!(value >= 299999755 && value <= 348000335) &&
+           !(value >= 386999938 && value <= 464000000) &&
+           !(value >= 778999847 && value <= 928000000)) {
         } else {
             if(furi_hal_rtc_is_flag_set(FuriHalRtcFlagDebug)) {
                 if((value >= 304100000 && value <= 321950000) &&
@@ -600,9 +600,9 @@ bool furi_hal_subghz_is_tx_allowed(uint32_t value) {
         break;
     case FuriHalVersionRegionJp:
         //312,00..315,25; 920,50..923,50
-    if(!(value >= 299999755 && value <= 348000335) &&
-       !(value >= 386999938 && value <= 464000000) &&
-       !(value >= 778999847 && value <= 928000000)) {
+        if(!(value >= 299999755 && value <= 348000335) &&
+           !(value >= 386999938 && value <= 464000000) &&
+           !(value >= 778999847 && value <= 928000000)) {
         } else {
             is_allowed = true;
         }

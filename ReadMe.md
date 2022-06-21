@@ -43,13 +43,13 @@
 #### Idle Screen:
 - Repeat indictator is located at the bottom right
 
-![unirfremix-idle](https://user-images.githubusercontent.com/982575/169639427-daef6274-2e38-4684-816a-14ba915aa051.png)
+![unirfremix-minimal-mainscreen_idle](https://user-images.githubusercontent.com/982575/174741909-aa1214b2-3d97-4232-ad5c-7e99711b8fa6.png)
 
 #### Sending Screen:
 - Button pressed will highlight when sending
 - LED indicator will flash
 
-![unirfremix-sending](https://user-images.githubusercontent.com/982575/169639435-74bdeb9e-da58-4ada-b613-8c4f8f89ab46.png)
+![unirfremix-minimal-mainscreen_send](https://user-images.githubusercontent.com/982575/174741934-ef144ba4-109a-430a-b439-699b863ac61c.png)
 
 #### Invalid Map File:
 - If you don't have at least one valid file path set in your ```universal_rf_map``` file, you'll see this screen
@@ -60,6 +60,11 @@
 - If you don't have the ```universal_rf_map``` file, you'll see this screen
 
 ![unirfremix-missingmap](https://user-images.githubusercontent.com/982575/169639439-6414c81a-3de9-4817-b9b5-235130fd0e56.png)
+
+#### Config Loading:
+- If the map file doesn't load properly for some reason, you'll see this screen
+
+![unirfremix-screen-loading](https://user-images.githubusercontent.com/982575/174741703-5632f7d5-ee1e-481e-8d11-7f87bc999c94.png)
 
 ------------
 ### Backstory

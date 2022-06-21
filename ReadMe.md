@@ -23,6 +23,7 @@
   - No skip function.
 
 * ##### Universal RF Map
+  - App updated to read map definitions from ```subghz/assets/universal_rf_map.txt```
   - Backwards compatible with [jimilinuxguy Universal RF Remote](https://github.com/jimilinuxguy/flipperzero-universal-rf-remote) map file. You should be able to use the map file as is with both versions.
   - Recommend that you update the map file to the version included in this repo.
   - File path should not have any spaces or special characters (- and _ excluded).

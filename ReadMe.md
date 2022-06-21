@@ -61,6 +61,11 @@
 
 ![unirfremix-missingmap](https://user-images.githubusercontent.com/982575/169639439-6414c81a-3de9-4817-b9b5-235130fd0e56.png)
 
+#### Config Loading:
+- If the map file doesn't load properly for some reason, you'll see this screen
+
+![unirfremix-screen-loading](https://user-images.githubusercontent.com/982575/174741703-5632f7d5-ee1e-481e-8d11-7f87bc999c94.png)
+
 ------------
 ### Backstory
 I saw jimilinuxguy post an idea of having a TouchTunes/Jukebox remote app, and it was basically one screenshot and a link to a repo. At the time, I was reading the Hello World plugin tutorial and wanted to give coding a plugin a shot.

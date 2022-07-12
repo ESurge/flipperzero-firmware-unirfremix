@@ -68,6 +68,8 @@ FIRMWARE_APPS = {
         "basic_apps",
         "updater_app",
         "archive",
+        # Custom Apps
+        "custom_apps",
         # Settings
         "passport",
         "system_settings",

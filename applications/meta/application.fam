@@ -39,3 +39,12 @@ App(
         "bt_hid",
     ],
 )
+
+App(
+    appid="custom_apps",
+    name="Custom applications for main menu",
+    apptype=FlipperAppType.METAPACKAGE,
+    provides=[
+        "unirfremix",
+    ],
+)

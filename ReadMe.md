@@ -10,7 +10,6 @@
 ### Custom Import
 
 - UniRFRemix folder has the base code.
-- Icons used are located at ```assets/icons/UniRFRemix```
 - Animated Icon used is located at ```assets/icons/MainMenu/UniRFRemix_14```
 - Follow compilation instructions from [Flipper Devices Flipper Zero Firmware GitHub](https://github.com/flipperdevices/flipperzero-firmware)
 ------------

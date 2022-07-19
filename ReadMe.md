@@ -5,7 +5,7 @@
 
 - Grab DFU from [Releases](https://github.com/ESurge/flipperzero-firmware-unifxremix/Relases/latest)
 - Flash onto Flipper Zero
-- Edit [universal\_rf\_map.txt](https://github.com/ESurge/flipperzero-firmware-unirfremix/blob/dev-fbt/assets/resources/subghz/assets/universal_rf_map.txt) and upload to SD card under ```/subghz/assets``` folder
+- Edit [universal\_rf\_map.txt](https://github.com/ESurge/flipperzero-firmware-unirfremix/blob/minimal-fbt/assets/resources/subghz/assets/universal_rf_map.txt) and upload to SD card under ```/subghz/assets``` folder
 ------------
 ### Custom Import
 

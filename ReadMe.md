@@ -1,21 +1,23 @@
 # UniRF Remix App
-### Based on Official Flipper Zero Firmware using FBT
+### Based on Official Flipper Zero Firmware (as of July 31) using FBT
 ------------
-### Quick Start
-
-- Grab DFU from [Releases](https://github.com/ESurge/flipperzero-firmware-unifxremix/Relases/latest)
-- Flash onto Flipper Zero
-- Edit [universal\_rf\_map.txt](https://github.com/ESurge/flipperzero-firmware-unirfremix/blob/dev-fbt/assets/resources/subghz/assets/universal_rf_map.txt) and upload to SD card under ```/subghz/assets``` folder
+### !!Important!!
+- Be sure to edit [universal\_rf\_map.txt](https://github.com/ESurge/flipperzero-firmware-unirfremix/blob/dev-fbt/assets/resources/unirf/universal_rf_map.txt) and upload to SD card under ```unirf``` folder
+- App now supports multiple map files. Place these in ```unirf``` folder on SD card.
 ------------
 ### Custom Import
 
-- UniRFRemix folder has the base code.
-- Icons used are located at ```assets/icons/UniRFRemix```
-- Animated Icon used is located at ```assets/icons/MainMenu/UniRFRemix_14```
+- ```applications/unirfremix``` has the base code
+- Be sure to add ```UniRFRemix``` to ```applications/meta/application.fam``` file.
+- Icons used within the app are located at ```assets/icons/UniRFRemix```
+- Main Menu Animated Icon used is located at ```assets/icons/MainMenu/UniRFRemix_14```
+- Example map file located in ```assets/resources/unirf```
 - Follow compilation instructions from [Flipper Devices Flipper Zero Firmware GitHub](https://github.com/flipperdevices/flipperzero-firmware)
 ------------
 ### Notes
+* #### Only RAW SubGhz captures are currently supported
 * ##### App Usage
+  - Select a map file
   - Press a button to send the assigned capture file.
   - Press Back button to set how many repeats the app should send. Capped at 5 repeats.
   - Hold Back button to exit app.
@@ -23,17 +25,13 @@
   - No skip function.
 
 * ##### Universal RF Map
-  - App updated to read map definitions from ```subghz/assets/universal_rf_map.txt```
-  - Backwards compatible with [jimilinuxguy Universal RF Remote](https://github.com/jimilinuxguy/flipperzero-universal-rf-remote) map file. You should be able to use the map file as is with both versions.
-  - Recommend that you update the map file to the version included in this repo.
-  - File path should not have any spaces or special characters (- and _ excluded).
+  - File path should not have any spaces or special characters (-, ., and _ excluded).
   - Labels are limited to 12 characters.
     - Why? This is to prevent overlapping elements on screen.
     - For example: If you set your label or file to ```WWWWWWWWWWWWWWW``` you'll be over the screen limits.
 
-* ##### Firmware
-  - Code based on the Unleashed firmware
-  - I modified the wav_player title in applications.c but that's all.
+* ##### Firmware not included
+  - Code based on ```music_player``` from [Flipper Devices Official Firmware](https://github.com/flipperdevices/flipperzero-firmware)
 
 * ##### Issues
   - If you find any issues, report them. I am not sure I can fix them, but I will try.
@@ -56,16 +54,6 @@
 - If you don't have at least one valid file path set in your ```universal_rf_map``` file, you'll see this screen
 
 ![unirfremix-invalidmap](https://user-images.githubusercontent.com/982575/169639438-f1b96944-42c4-476c-9fe2-233d174c6262.png)
-
-#### Missing Map File:
-- If you don't have the ```universal_rf_map``` file, you'll see this screen
-
-![unirfremix-missingmap](https://user-images.githubusercontent.com/982575/169639439-6414c81a-3de9-4817-b9b5-235130fd0e56.png)
-
-#### Config Loading:
-- If the map file doesn't load properly for some reason, you'll see this screen
-
-![unirfremix-screen-loading](https://user-images.githubusercontent.com/982575/174741703-5632f7d5-ee1e-481e-8d11-7f87bc999c94.png)
 
 ------------
 ### Backstory

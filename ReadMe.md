@@ -8,7 +8,7 @@
 ### Custom Import
 
 - ```applications/unirfremix``` has the base code
-- Be sure to add ```UniRFRemix``` to ```applications/meta/application.fam``` file.
+- Be sure to add ```unirfremix``` to ```applications/meta/application.fam``` file.
 - Icons used within the app are located at ```assets/icons/UniRFRemix```
 - Main Menu Animated Icon used is located at ```assets/icons/MainMenu/UniRFRemix_14```
 - Example map file located in ```assets/resources/unirf```

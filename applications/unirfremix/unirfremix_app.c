@@ -557,8 +557,7 @@ static void render_callback(Canvas* canvas, void* ctx) {
         canvas_set_font(canvas, FontPrimary);
         canvas_draw_str_aligned(canvas, 62, 5, AlignCenter, AlignTop, "Config is incorrect.");
         canvas_set_font(canvas, FontSecondary);
-        canvas_draw_str_aligned(canvas, 62, 25, AlignCenter, AlignTop, "Please configure");
-        canvas_draw_str_aligned(canvas, 62, 35, AlignCenter, AlignTop, "universal_rf_map");
+        canvas_draw_str_aligned(canvas, 62, 30, AlignCenter, AlignTop, "Please configure map.");
         canvas_draw_str_aligned(canvas, 62, 60, AlignCenter, AlignBottom, "Hold Back to Exit.");
     } else {
         //map found, draw all the things

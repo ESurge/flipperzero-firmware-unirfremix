@@ -16,6 +16,9 @@
 ------------
 ### Notes
 * #### Only RAW SubGhz captures are currently supported
+
+* #### Firmware not included on this repo
+
 * ##### App Usage
   - Select a map file
   - Press a button to send the assigned capture file.
@@ -29,9 +32,6 @@
   - Labels are limited to 12 characters.
     - Why? This is to prevent overlapping elements on screen.
     - For example: If you set your label or file to ```WWWWWWWWWWWWWWW``` you'll be over the screen limits.
-
-* ##### Firmware not included
-  - Code based on ```music_player``` from [Flipper Devices Official Firmware](https://github.com/flipperdevices/flipperzero-firmware)
 
 * ##### Issues
   - If you find any issues, report them. I am not sure I can fix them, but I will try.

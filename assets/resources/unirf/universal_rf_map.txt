@@ -1,0 +1,12 @@
+Filetype: Flipper SubGhz RAW File
+Version: 1
+UP: /ext/subghz/Example_for_UP.sub
+DOWN: /ext/subghz/Example_for_DOWN.sub
+LEFT: /ext/subghz/Example_for_LEFT.sub
+RIGHT: /ext/subghz/Example_for_RIGHT.sub
+OK: /ext/subghz/Example_for_OK.sub
+ULABEL: Up Label
+DLABEL: Down Label
+LLABEL: Left Label
+RLABEL: Right Label
+OKLABEL: Ok Label

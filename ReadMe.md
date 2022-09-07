@@ -1,4 +1,6 @@
-# UniRF Remix App
+# Archived
+### Look for the latest version of UniRF App on RogueMaster's or Unleashed's fork of FlipperZero Firmware.
+## UniRF Remix App
 ### Based on Official Flipper Zero Firmware (as of July 31) using FBT
 ------------
 ### !!Important!!
